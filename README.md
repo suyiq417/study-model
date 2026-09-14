@@ -15,9 +15,7 @@ pixi install
 运行学习代码：
 
 ```bash
-pixi run python transformer/01_tensor_basics.py
-pixi run python transformer/02_tensor_shapes.py
-pixi run python transformer/03_embedding.py
+pixi run python transformer/08_qkv_projections.py
 ```
 
 ## Transformer 学习记录
@@ -31,3 +29,8 @@ pixi run python transformer/03_embedding.py
 - 三维张量和批量矩阵乘法
 - Embedding 权重表、token 查表和输出形状
 - 固定随机种子以复现实验结果
+- 正弦和余弦位置编码
+- 缩放点积注意力
+- 三维张量的批量注意力计算
+- Causal Mask 因果掩码
+- 使用线性层生成 Query、Key 和 Value

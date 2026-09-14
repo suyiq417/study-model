@@ -6,6 +6,7 @@ torch.manual_seed(42)
 vocab_size = 5
 embedding_dim = 3
 
+# Embedding 是形状为 [vocab_size, embedding_dim] 的可学习查找表。
 embedding = nn.Embedding(
     num_embeddings=vocab_size,
     embedding_dim=embedding_dim,
@@ -30,6 +31,7 @@ print(token_ids)
 print("token IDs shape:", token_ids.shape)
 print("token IDs dtype:", token_ids.dtype)
 
+# 输入 [B, T]，查表后得到 [B, T, D]。
 embedded = embedding(token_ids)
 print("\nembedded:")
 print(embedded)
@@ -50,11 +52,13 @@ print(
 
 embedding_dim_4 = 4
 
+# 使用另一个 Embedding 层观察 embedding_dim 对输出形状的影响。
 embedding_4 = nn.Embedding(
     num_embeddings=vocab_size,
     embedding_dim=embedding_dim_4,
 )
 
+# 同一个 Embedding 层中，相同 token ID 总是查到同一个向量。
 print("\nsame token verification:")
 print("token_ids[0, 2]:", token_ids[0, 2])
 print("token_ids[1, 1]:", token_ids[1, 1])

@@ -51,7 +51,7 @@ print(value2.tolist())
 
 a = torch.tensor(
     [
-        [1.0, 2.0], 
+        [1.0, 2.0],
         [3.0, 4.0],
     ]
 )
@@ -85,7 +85,8 @@ right = torch.tensor(
     ]
 )
 
-result = left @ right #另一种写法是 torch.matmul(left, right)
+# @ 表示矩阵乘法，另一种写法是 torch.matmul(left, right)。
+result = left @ right
 print("\nmatrix multiplication:")
 print("left shape:", left.shape)
 print("right shape:", right.shape)

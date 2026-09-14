@@ -13,6 +13,7 @@ print("x[1] shape:", x[1].shape)
 print("x[:1]:", x[:1])
 print("x[:1] shape:", x[:1].shape)
 
+# reshape 只改变张量的形状，不改变元素数量和排列顺序。
 x = x.reshape(2, 3, 4)
 print("\nreshaped x:")
 print(x)
@@ -49,7 +50,8 @@ key = torch.rand(2, 3, 4)
 print("\nquery shape:", query.shape)
 print("key shape:", key.shape)
 
-key_T = key.transpose(1, 2) # 从0开始数，1表示第2个维度，2表示第3个维度
+# 交换序列维和特征维，为批量矩阵乘法做准备。
+key_T = key.transpose(1, 2)
 print("\nkey_T shape:", key_T.shape)
 
 print("key_T:")
